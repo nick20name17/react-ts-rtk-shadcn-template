@@ -8,7 +8,7 @@ import { AddUserModal } from '@/components/table/modals/add-user'
 import { DataTable } from '@/components/table/table'
 import { Skeleton } from '@/components/ui/skeleton'
 
-export const TablePage = () => {
+const TablePage = () => {
     const [search, setSearch] = useState('')
     const [limit, setLimit] = useState(10)
 
@@ -67,3 +67,5 @@ const TableSkeleton = () => {
         </div>
     )
 }
+
+export default TablePage

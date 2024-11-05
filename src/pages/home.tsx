@@ -19,11 +19,16 @@ export const HomePage = () => {
                 className='scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl'>
                 Home Page
             </motion.h1>
+            <Demo />
             <section className='mt-10'>
                 <TaskList />
             </section>
         </div>
     )
+}
+
+const Demo = () => {
+    return <div></div>
 }
 
 const TaskList = () => {
