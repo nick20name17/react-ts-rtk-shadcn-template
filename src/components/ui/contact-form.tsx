@@ -1,7 +1,6 @@
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
 import { toast } from 'sonner'
-import { withMask } from 'use-mask-input'
 import { z } from 'zod'
 
 import { DatePicker } from './date-picker'
@@ -47,12 +46,7 @@ const contactSchema = z.object({
         .regex(
             /[!@#$%^&*]/,
             'Пароль повинен містити не менше одного спеціального символу (!@#$%^&*)'
-        ),
-    phone: z
-        .string({
-            required_error: "Це поле є обов'язковим"
-        })
-        .min(1, "Це поле є обов'язковим")
+        )
 })
 
 type ContactFormData = z.infer<typeof contactSchema>
@@ -143,27 +137,9 @@ export const ContactForm = () => {
                             <FormControl>
                                 <PasswordWithReveal {...field} />
                             </FormControl>
-
-                            <FormMessage />
-                        </FormItem>
-                    )}
-                />
-                <FormField
-                    control={form.control}
-                    name='phone'
-                    render={({ field }) => (
-                        <FormItem className='flex flex-col gap-y-2'>
-                            <FormLabel>Phone</FormLabel>
-                            <FormControl ref={withMask('+380 99 999 99 99')}>
-                                <Input
-                                    {...field}
-                                    type='tel'
-                                    inputMode='tel'
-                                    placeholder='+38 065 1234 5588'
-                                    className='pr-10'
-                                />
-                            </FormControl>
-
+                            <FormDescription>
+                                This is your public display name.
+                            </FormDescription>
                             <FormMessage />
                         </FormItem>
                     )}
