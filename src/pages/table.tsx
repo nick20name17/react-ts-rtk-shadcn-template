@@ -13,7 +13,8 @@ export const TablePage = () => {
     const [limit, setLimit] = useState(10)
 
     const { data: users, isLoading } = useGetUsersQuery({
-        limit
+        limit,
+        search: search.trim()
     })
 
     return (

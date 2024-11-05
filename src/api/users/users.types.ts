@@ -20,4 +20,5 @@ export interface UserPatchData {
 export interface UserQueryParams {
     offset: number
     limit: number
+    search: string
 }

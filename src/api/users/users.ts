@@ -1,11 +1,15 @@
 import { api } from '..'
 
 import type { User, UserAddData, UserPatchData, UserQueryParams } from './users.types'
+import { getQueryParamString } from '@/utils/get-query-param-string'
 
 const usersApi = api.injectEndpoints({
     endpoints: (builder) => ({
         getUsers: builder.query<User[], Partial<UserQueryParams>>({
-            query: ({ limit }) => `/users?limit=${limit}`,
+            query: (queryParams) => {
+                const queryParamsString = getQueryParamString(queryParams)
+                return `/users?${queryParamsString}`
+            },
             providesTags: ['Users']
         }),
         addUser: builder.mutation<User, UserAddData>({
