@@ -13,7 +13,7 @@ export const ErrorPage = () => {
             <Button
                 className='mt-10'
                 asChild>
-                <Link to={routes.main}>Go to Home</Link>
+                <Link to={routes.home}>Go to Home</Link>
             </Button>
         </>
     )

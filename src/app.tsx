@@ -5,6 +5,7 @@ import { Layout } from './layout'
 import { CounterPage } from './pages/counter'
 import { ErrorPage } from './pages/error'
 import { FormPage } from './pages/form'
+import { HomePage } from './pages/home'
 import { TablePage } from './pages/table'
 
 const router = createBrowserRouter([
@@ -14,7 +15,11 @@ const router = createBrowserRouter([
         errorElement: <ErrorPage />,
         children: [
             {
-                path: routes.main,
+                index: true,
+                element: <HomePage />
+            },
+            {
+                path: routes.form,
                 element: <FormPage />
             },
             {

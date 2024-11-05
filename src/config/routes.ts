@@ -1,5 +1,6 @@
 export const routes = {
-    main: '/form',
+    home: '/',
+    form: '/form',
     table: '/table',
     counter: '/counter'
 }
